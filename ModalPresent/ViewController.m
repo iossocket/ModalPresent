@@ -29,6 +29,7 @@
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
+    button.center = self.view.center;
     [button setTitle:@"Click me" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
