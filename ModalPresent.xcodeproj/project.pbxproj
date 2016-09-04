@@ -17,6 +17,7 @@
 		D06A75A71D7C0E0100565BE5 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A75A61D7C0E0100565BE5 /* ModalViewController.m */; };
 		D06A75AB1D7C106900565BE5 /* BouncePresentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A75AA1D7C106800565BE5 /* BouncePresentAnimation.m */; };
 		D06A75AE1D7C16F600565BE5 /* DismissAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A75AD1D7C16F600565BE5 /* DismissAnimation.m */; };
+		D06A75B11D7C1DC900565BE5 /* SwipeInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A75B01D7C1DC900565BE5 /* SwipeInteractiveTransition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		D06A75AA1D7C106800565BE5 /* BouncePresentAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BouncePresentAnimation.m; sourceTree = "<group>"; };
 		D06A75AC1D7C16F500565BE5 /* DismissAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissAnimation.h; sourceTree = "<group>"; };
 		D06A75AD1D7C16F600565BE5 /* DismissAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissAnimation.m; sourceTree = "<group>"; };
+		D06A75AF1D7C1DC900565BE5 /* SwipeInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeInteractiveTransition.h; sourceTree = "<group>"; };
+		D06A75B01D7C1DC900565BE5 /* SwipeInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeInteractiveTransition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,8 @@
 				D06A75AA1D7C106800565BE5 /* BouncePresentAnimation.m */,
 				D06A75AC1D7C16F500565BE5 /* DismissAnimation.h */,
 				D06A75AD1D7C16F600565BE5 /* DismissAnimation.m */,
+				D06A75AF1D7C1DC900565BE5 /* SwipeInteractiveTransition.h */,
+				D06A75B01D7C1DC900565BE5 /* SwipeInteractiveTransition.m */,
 			);
 			name = Transitioning;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 				D06A75A71D7C0E0100565BE5 /* ModalViewController.m in Sources */,
 				D06A75831D7C0DA000565BE5 /* ViewController.m in Sources */,
 				D06A75AE1D7C16F600565BE5 /* DismissAnimation.m in Sources */,
+				D06A75B11D7C1DC900565BE5 /* SwipeInteractiveTransition.m in Sources */,
 				D06A75801D7C0DA000565BE5 /* AppDelegate.m in Sources */,
 				D06A757D1D7C0DA000565BE5 /* main.m in Sources */,
 			);

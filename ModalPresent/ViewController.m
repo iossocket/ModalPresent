@@ -10,10 +10,12 @@
 #import "ModalViewController.h"
 #import "BouncePresentAnimation.h"
 #import "DismissAnimation.h"
+#import "SwipeInteractiveTransition.h"
 
 @interface ViewController ()<ModalViewControllerDelegate, UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) BouncePresentAnimation *presentAnimation;
 @property (nonatomic, strong) DismissAnimation *dismissAnimation;
+@property (nonatomic, strong) SwipeInteractiveTransition *transitionController;
 @end
 
 @implementation ViewController
@@ -23,6 +25,7 @@
     
     _presentAnimation = [BouncePresentAnimation new];
     _dismissAnimation = [DismissAnimation new];
+    _transitionController = [SwipeInteractiveTransition new];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
@@ -35,6 +38,7 @@
     ModalViewController *mvc =  [[ModalViewController alloc] init];
     mvc.delegate = self;
     mvc.transitioningDelegate = self;
+    [self.transitionController wireToViewController:mvc];
     [self presentViewController:mvc animated:YES completion:nil];
 }
 
@@ -48,6 +52,10 @@
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     return self.dismissAnimation;
+}
+
+- (nullable id <UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id <UIViewControllerAnimatedTransitioning>)animator {
+    return self.transitionController.isInteracting ? self.transitionController : nil;
 }
 
 @end

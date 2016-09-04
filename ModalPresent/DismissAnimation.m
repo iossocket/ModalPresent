@@ -16,25 +16,25 @@
 }
 // This method can only  be a nop if the transition is interactive and not a percentDriven interactive transition.
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext; {
-    // 1. Get "to view controller" from transition context
+    // 1. Get controllers from transition context
+    UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
-    // 2. set "to view"'s init frame
+    // 2. Set init frame for fromVC
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    toVC.view.frame = CGRectOffset(screenBounds, -screenBounds.size.width, 0);
+    CGRect finalFrame = CGRectOffset(screenBounds, screenBounds.size.width, 0);
     
-    // 3. Add toVC's view to containerView
+    // 3. Add target view to the container, and move it to back.
     UIView *containerView = [transitionContext containerView];
     [containerView addSubview:toVC.view];
+    [containerView sendSubviewToBack:toVC.view];
     
-    // 4. Do animation
+    // 4. Do animate now
     NSTimeInterval duration = [self transitionDuration:transitionContext];
-    CGRect finalFrame = [transitionContext finalFrameForViewController:toVC];
     [UIView animateWithDuration:duration animations:^{
-        toVC.view.frame = finalFrame;
+        fromVC.view.frame = finalFrame;
     } completion:^(BOOL finished) {
-        // 5. Tell context that animation completed.
-        [transitionContext completeTransition:YES];
+        [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
 }
 @end
